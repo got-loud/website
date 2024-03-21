@@ -1,0 +1,9 @@
+<div *ngIf="options" class="portfolio-box shadow">
+  <img [src]="options.imageUrl" [alt]="options.imageAlt" [title]="options.imageAlt" class="img-fluid">
+  <div class="portfolio-info">
+    <div class="caption">
+      <h4>{{ options.title }}</h4>
+      <p>{{ options.description }}</p>
+    </div>
+  </div>
+</div>
