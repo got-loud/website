@@ -3,4 +3,5 @@ export interface PortfolioItemOptionsInterface {
   imageAlt: string;
   title: string;
   description: string;
+  date?: Date;
 }

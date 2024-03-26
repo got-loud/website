@@ -1,7 +1,7 @@
 <section id="portfolio" class="portfolio">
   <div class="container">
     <div class="row text-center mt-5">
-      <h1 class="display-3 fw-bold text-capitalize">Previous Events</h1>
+      <h1 class="display-3 fw-bold text-capitalize">Events</h1>
       <div class="heading-line"></div>
       <p class="lead">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro temporibus distinctio.
@@ -10,16 +10,27 @@
     <!-- FILTER BUTTONS  -->
     <div class="row mt-5 mb-4 g-3 text-center">
       <div class="col-md-12">
-        <button class="btn btn-primary me-1" type="button">All</button>
-        <button class="btn btn-outline-primary me-1" type="button">Current</button>
-        <button class="btn btn-outline-primary me-1" type="button">Past</button>
+        <ng-container *ngIf="selectedOptionSubject | async as selectedOption">
+          <app-portfolio-type-selector [currentSelection]="selectedOption"
+                                       [option]="portfolioViewOptions.All"
+                                       (onSelect)="selectedOptionSubject.next($event)"
+          ></app-portfolio-type-selector>
+          <app-portfolio-type-selector [currentSelection]="selectedOption"
+                                       [option]="portfolioViewOptions.Current"
+                                       (onSelect)="selectedOptionSubject.next($event)"
+          ></app-portfolio-type-selector>
+          <app-portfolio-type-selector [currentSelection]="selectedOption"
+                                       [option]="portfolioViewOptions.Past"
+                                       (onSelect)="selectedOptionSubject.next($event)"
+          ></app-portfolio-type-selector>
+        </ng-container>
       </div>
     </div>
 
     <!-- START THE PORTFOLIO ITEMS  -->
     <div class="row">
 
-      <div class="col-lg-4 col-md-6" *ngFor="let option of items">
+      <div class="col-lg-4 col-md-6" *ngFor="let option of filteredItems">
         <app-portfolio-item [options]="option"></app-portfolio-item>
       </div>
 

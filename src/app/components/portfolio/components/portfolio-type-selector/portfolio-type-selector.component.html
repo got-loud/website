@@ -1,0 +1,4 @@
+<button [ngClass]="currentSelection === option ? 'btn-primary' : 'btn-outline-primary'"
+        class="btn me-1"
+        (click)="onSelect.emit(option)"
+        type="button">{{ option }}</button>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { APP_NAME } from "../../constants";
+import {APP_DESCRIPTION, APP_NAME} from "../../constants";
 
 @Component({
   selector: 'app-intro',
@@ -11,4 +11,5 @@ import { APP_NAME } from "../../constants";
 export class IntroComponent {
 
   protected readonly APP_NAME = APP_NAME;
+  protected readonly APP_DESCRIPTION = APP_DESCRIPTION;
 }
