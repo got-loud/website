@@ -140,6 +140,6 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   }
 
   private assetUrl(nameAndExtension: string) {
-    return `/assets/images/portfolio/${nameAndExtension}`;
+    return `assets/images/portfolio/${nameAndExtension}`;
   }
 }
